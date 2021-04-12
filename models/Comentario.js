@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   
   Comentario.associate = (models) => {
+    // Relação N:1 (vários posts de 1 usuário)
     Comentario.belongsTo(models.Post, {as: "post", foreignKey: "posts_id"})
   };
 
